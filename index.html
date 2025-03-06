@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بازی‌های آنلاین</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>پلتفرم بازی‌های آنلاین</h1>
+        <nav>
+            <ul>
+                <li><a href="#ludo">منچ</a></li>
+                <li><a href="#chess">شطرنج</a></li>
+                <li><a href="#tictactoe">دوز</a></li>
+                <li><a href="#rock-paper-scissors">سنگ کاغذ قیچی</a></li>
+                <li><a href="#memory-card">کارت حافظه</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="ludo">
+            <h2>منچ</h2>
+            <p>بازی منچ به زودی اضافه خواهد شد!</p>
+        </section>
+
+        <section id="chess">
+            <h2>شطرنج</h2>
+            <p>بازی شطرنج به زودی اضافه خواهد شد!</p>
+        </section>
+
+        <section id="tictactoe">
+            <h2>دوز</h2>
+            <p>بازی دوز به زودی اضافه خواهد شد!</p>
+        </section>
+
+        <section id="rock-paper-scissors">
+            <h2>سنگ کاغذ قیچی</h2>
+            <p>بازی سنگ کاغذ قیچی به زودی اضافه خواهد شد!</p>
+            <button onclick="startRockPaperScissors()">شروع بازی</button>
+            <div id="rock-paper-scissors-game" style="display:none;">
+                <h3>بازی سنگ، کاغذ، قیچی</h3>
+                <div class="choices">
+                    <button class="choice" data-choice="rock">سنگ</button>
+                    <button class="choice" data-choice="paper">کاغذ</button>
+                    <button class="choice" data-choice="scissors">قیچی</button>
+                </div>
+                <h2 id="result"></h2>
+            </div>
+        </section>
+
+        <section id="memory-card">
+            <h2>کارت حافظه</h2>
+            <p>بازی کارت حافظه به زودی اضافه خواهد شد!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 بازی‌های آنلاین</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
