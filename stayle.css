@@ -34,6 +34,12 @@ main {
     color: black;
 }
 
+.game-icon {
+    width: 50px; /* عرض آیکون */
+    height: auto; /* حفظ نسبت تصویر */
+    margin-bottom: 10px; /* فاصله بین آیکون و نام بازی */
+}
+
 .game:hover {
     transform: scale(1.05);
 }
