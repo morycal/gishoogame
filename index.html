@@ -9,58 +9,30 @@
 <body>
     <header>
         <h1>پلتفرم بازی‌های آنلاین</h1>
-        <nav>
-            <ul>
-                <li><a href="#ludo">منچ</a></li>
-                <li><a href="#chess">شطرنج</a></li>
-                <li><a href="#tictactoe">دوز</a></li>
-                <li><a href="#rock-paper-scissors">سنگ کاغذ قیچی</a></li>
-                <li><a href="#memory-card">کارت حافظه</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
-        <section id="ludo">
-            <h2>منچ</h2>
-            <p>بازی منچ به زودی اضافه خواهد شد!</p>
-        </section>
-
-        <section id="chess">
-            <h2>شطرنج</h2>
-            <p>بازی شطرنج به زودی اضافه خواهد شد!</p>
-        </section>
-
-        <section id="tictactoe">
-            <h2>دوز</h2>
-            <p>بازی دوز به زودی اضافه خواهد شد!</p>
-        </section>
-
-        <section id="rock-paper-scissors">
-            <h2>سنگ کاغذ قیچی</h2>
-            <p>بازی سنگ کاغذ قیچی به زودی اضافه خواهد شد!</p>
-            <button onclick="startRockPaperScissors()">شروع بازی</button>
-            <div id="rock-paper-scissors-game" style="display:none;">
-                <h3>بازی سنگ، کاغذ، قیچی</h3>
-                <div class="choices">
-                    <button class="choice" data-choice="rock">سنگ</button>
-                    <button class="choice" data-choice="paper">کاغذ</button>
-                    <button class="choice" data-choice="scissors">قیچی</button>
-                </div>
-                <h2 id="result"></h2>
+        <div class="games-container">
+            <div class="game" id="ludo">
+                <a href="ludo.html"><h2>منچ</h2></a>
             </div>
-        </section>
-
-        <section id="memory-card">
-            <h2>کارت حافظه</h2>
-            <p>بازی کارت حافظه به زودی اضافه خواهد شد!</p>
-        </section>
+            <div class="game" id="chess">
+                <a href="chess.html"><h2>شطرنج</h2></a>
+            </div>
+            <div class="game" id="tictactoe">
+                <a href="tictactoe.html"><h2>دوز</h2></a>
+            </div>
+            <div class="game" id="rock-paper-scissors">
+                <a href="rock-paper-scissors.html"><h2>سنگ کاغذ قیچی</h2></a>
+            </div>
+            <div class="game" id="memory-card">
+                <a href="memory-card.html"><h2>کارت حافظه</h2></a>
+            </div>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2023 بازی‌های آنلاین</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
