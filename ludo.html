@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>بازی منچ</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ludo.css">
 </head>
 <body>
     <header>
@@ -12,11 +12,26 @@
     </header>
 
     <main>
-        <h2>بازی منچ به زودی اضافه خواهد شد!</h2>
+        <div id="board">
+            <div class="start" id="start-red">شروع قرمز</div>
+            <div class="start" id="start-green">شروع سبز</div>
+            <div class="start" id="start-blue">شروع آبی</div>
+            <div class="start" id="start-yellow">شروع زرد</div>
+            <div id="dice">تاس: <span id="dice-number">0</span></div>
+            <button id="roll-dice">تاس بریز</button>
+        </div>
+
+        <div id="controls">
+            <button id="move-piece">حرکت مهره</button>
+        </div>
+
+        <div id="message"></div>
     </main>
 
     <footer>
-        <p>&copy; 2023 بازی‌های آنلاین</p>
+        <p>&copy; 2023 بازی منچ</p>
     </footer>
+
+    <script src="ludo.js"></script>
 </body>
 </html>
