@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #game {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            gap: 5px;
+        }
+        .cell {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            background-color: white;
+            border: 2px solid #333;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .cell:hover {
+            background-color: #e0e0e0;
+        }
+        #status {
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+        @media (max-width: 400px) {
+            .cell {
+                width: 80px;
+                height: 80px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <div id="game"></div>
+    <div id="status"></div>
+</div>
+
+<script>
+    const gameContainer = document.getElementById('game');
+    const statusDisplay = document.getElementById('status');
+    let board = ['', '', '', '', '', '', '', '', ''];
+    let currentPlayer = 'X';
+
+    const createBoard = () => {
+        board.forEach((cell, index) => {
+            const cellElement = document.createElement('div');
+            cellElement.classList.add('cell');
+            cellElement.setAttribute('data-index', index);
+            cellElement.innerText = cell;
+
+            cellElement.addEventListener('click', handleCellClick);
+            gameContainer.appendChild(cellElement);
+        });
+    };
+
+    const handleCellClick = (event) => {
+        const index = event.target.getAttribute('data-index');
+        if (board[index] === '' && !checkWinner()) {
+            board[index] = currentPlayer;
+            event.target.innerText = currentPlayer;
+            if (checkWinner()) {
+                statusDisplay.innerText = `Player ${currentPlayer} Wins!`;
+            } else if (board.every(cell => cell !== '')) {
+                statusDisplay.innerText = 'It\'s a Draw!';
+            } else {
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                statusDisplay.innerText = `Player ${currentPlayer}'s Turn`;
+            }
+        }
+    };
+
+    const checkWinner = () => {
+        const winPatterns = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6]
+        ];
+        for (let pattern of winPatterns) {
+            const [a, b, c] = pattern;
+            if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+                return true;
+            }
+        }
+        return false;
+    };
+
+    createBoard();
+    statusDisplay.innerText = `Player ${currentPlayer}'s Turn`;
+</script>
+
+</body>
+</html>
