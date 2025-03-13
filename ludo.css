@@ -1,46 +1,40 @@
 body {
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #f0f0f0;
-    text-align: center;
-}
-
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 0;
 }
 
 #board {
+    display: grid;
+    grid-template-columns: repeat(9, 60px);
+    grid-template-rows: repeat(9, 60px);
+    gap: 2px;
     margin: 20px;
-    border: 2px solid #4CAF50;
-    padding: 20px;
-    position: relative;
 }
 
-.start {
-    border: 1px dashed #4CAF50;
-    padding: 10px;
-    margin: 10px 0;
+.cell {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#dice {
-    margin: 20px;
-    font-size: 24px;
+.cell:nth-child(odd) {
+    background-color: #e0e0e0;
 }
 
-#controls {
+#rollButton {
     margin-top: 20px;
-}
-
-button {
     padding: 10px 20px;
     font-size: 16px;
-    cursor: pointer;
 }
 
-footer {
-    margin-top: 20px;
-    padding: 10px 0;
-    background-color: #4CAF50;
-    color: white;
+#status {
+    margin-top: 10px;
+    font-size: 18px;
 }
